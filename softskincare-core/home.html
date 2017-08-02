@@ -1,0 +1,143 @@
+<section id="home" class="home-page-content page-content">
+    <section class="homepage-slider">
+        <div class="container">
+            <!--START: home_carousel-->
+            <div id="homeCarousel" class="homeCarousel flexslider parallax-slider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]">
+                <ul class="slides">
+                    <!--START: carousel-->
+                    <li style="background-image:url('[image]')" class="parallax-slide-li">
+						<a href="" class="parallax-slide" data-parallax-slide="[link]">
+							<div class="parallax-text">
+								<img src="[image]" alt="" />
+							</div>
+						</a>
+					</li>
+                    <!--END: carousel-->
+                </ul>
+            </div>
+            <!--END: home_carousel-->
+        </div>
+    </section>
+
+	<!--
+    <!-START: CATEGORY_HEADER->
+    <section class="category-header">[CONTENT]</section>
+    <!-END: CATEGORY_HEADER->
+    -->
+    
+    <section class="main-sliders">
+    	<div class="container clearfix">
+    		<div class="col-xs-12 col-md-4 indoor-left tc-animate-me" data-animation="fadeInLeft">
+				<h3>Wake up to Fresh<br>and Radiant Skin</h3>
+   				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum odio aliquet ornare tincidunt. Orci varius natoque penatibus et magnis dis </p>
+   				<div class="shop-now">
+   					<a href="" class="box bar">Shop Now</a>
+   				</div>
+    		</div>
+    		<div class="col-xs-12 col-md-8 indoor-banner tc-animate-me" data-animation="fadeInRight">
+    			<a href=""><img src="assets/templates/[template]/images/products.png" alt=""></a>
+    		</div>
+		</div>
+    </section>
+
+    <section class="products-section">
+        <div class="container">
+            <!--START: FEATURE_MENU-->
+            <h2 class="header-specials">[category_Header-specials]</h2>
+
+            <!--START: CATEGORY_ITEMS-->
+            <div class="product-items product-items-[product-cols-number]">
+                <!--START: ITEM_TEMPLATE_0-->
+                [product_items]
+                <!--END: ITEM_TEMPLATE_0-->
+            </div>
+            <!--END: CATEGORY_ITEMS-->
+            <!--END: FEATURE_MENU-->
+        </div>
+    </section>
+    
+    
+    <section class="home-footer-banner">
+    	<div class="container">
+    		<div class="inside">
+    			<!--<img src="assets/templates/[template]/images/footer-banner.jpg" alt="">-->
+    			<div class="inside-text">
+    				<h3 class="tc-animate-me" data-animation="fadeInRight">Skincare &amp; Beauty Products</h3>
+    				<p class="tc-animate-me p-delay" data-animation="fadeInRight">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus elementum odio aliquet ornare tincidunt.</p>
+    			</div>
+    		</div>
+		</div>
+    </section>
+
+    <!--START: CATEGORY_FOOTER-->
+    <section class="category-footer">[CONTENT]</section>
+    <!--END: CATEGORY_FOOTER-->
+
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<!--<script type="text/javascript" charset="utf-8">
+    jQuery(function () {
+        jQuery('.homeCarousel').flexslider({
+            animation: jQuery(this).data('animation'),
+            slideshowSpeed: jQuery(this).data('slideshowSpeed'),
+            controlNav: false,
+            keyboard: false
+        });
+    });
+</script>-->
+<script type="text/javascript" charset="utf-8">
+jQuery(document).ready(function () {
+	
+	jQuery('.parallax-slider .parallax-slide').each(function(index, element) {
+		
+		var slide_data = Array();
+		slide_data[0] = "#";
+		slide_data[1] = "";
+		
+		var slide_data_arr = jQuery(element).data('parallax-slide').split('|');
+		
+		if(slide_data_arr[0]) {
+			slide_data[0] = slide_data_arr[0];
+		}
+		if(slide_data_arr[1]) {
+			slide_data[1] = slide_data_arr[1];
+		}
+		
+		jQuery(element).attr("href", slide_data[0]);
+		jQuery(element).find('img').attr("src", slide_data[1]);
+	});
+	
+	
+	jQuery('#homeCarousel').flexslider({
+		animation: "[hc_effect]",
+		slideshowSpeed: [hc_delay],
+		controlNav: false,
+		keyboard: false
+	});
+});
+
+(function(){
+
+  var parallax = document.querySelectorAll(".parallax-slide-li"),
+      speed = -0.1;
+
+  window.onscroll = function(){
+    [].slice.call(parallax).forEach(function(el,i){
+
+      var windowYOffset = window.pageYOffset,
+          elBackgrounPos = "10% " + (windowYOffset * speed) + "px";
+
+      el.style.backgroundPosition = elBackgrounPos;
+
+    });
+  };
+
+})();
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<!--END: template_styles-->
