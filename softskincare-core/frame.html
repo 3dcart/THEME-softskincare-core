@@ -22,7 +22,7 @@
     <link rel="StyleSheet" href="assets/templates/[template]/css/default.css" type="text/css" />
     <!--END: page_styles-->
 </head>
-<body class="[body_class]" data-currency="[currency_symbol]">
+<body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
 
     <section class="top-nav hidden-xs">
         <div class="container">
@@ -47,7 +47,7 @@
                     <div class="minicart">
                         <a href="view_cart.asp" class="minicart-inner clearfix">
                             <span class="cart-details">
-                                <span class="cart-title">Cart</span>
+                                <span class="cart-title">[frame_shopping-cart-text]</span>
                                 <!--<span class="cart-count"><span class="minicart-items">([ITEMSINCART])</span></span>-->
                             </span>
                             <span class="icon-basket cart-icon"></span>
@@ -58,17 +58,17 @@
                         <a href="view_cart.asp" class="minicart-inner clearfix">
                             <span class="icon-basket cart-icon"></span>
                             <span class="cart-details">
-                                <span class="minicart-items">[ITEMSINCART]</span> Items
+                                <span class="minicart-items">[ITEMSINCART]</span> [frame_ITEMSINCART-text]
                             </span>
                         </a>
                     </div>
 					<div class="useraccount clearfix">
 						<ul class="clearfix">
 							<!--START: username-->
-							<li><a href="/myaccount.asp"><span class="icon-user"><span class="span-2">logout</span></span></a></li>
+							<li><a href="/myaccount.asp"><span class="icon-user"><span class="span-2">[frame_logout-link-text]</span></span></a></li>
 							<!--END: username-->
 							<!--START: login-->
-							<li><a href="/myaccount.asp"><span class="icon-user"><span class="span-2">Sign in or Create an Account</span></span></a></li>
+							<li><a href="/myaccount.asp"><span class="icon-user"><span class="span-2">[frame_login-link-text] or [frame_register-link-text]</span></span></a></li>
 							<!--END: login-->
 						</ul>
 					</div>
@@ -230,14 +230,14 @@
                                 </button>
                             </div>
                             <div class="clearfix maillist-options">
-                                <div class="subscribe"><input id="list_subscribe" type="radio" name="subscribe" value="1" checked="checked"> <label for="list_subscribe">Subscribe</label></div>
-                                <div class="subscribe"><input id="list_unsubscribe" type="radio" name="subscribe" value="0"> <label for="list_unsubscribe">Unsubscribe</label></div>
+                                <div class="subscribe"><input id="list_subscribe" type="radio" name="subscribe" value="1" checked="checked"> <label for="list_subscribe">[mailinglist_subscribe]</label></div>
+                                <div class="subscribe"><input id="list_unsubscribe" type="radio" name="subscribe" value="0"> <label for="list_unsubscribe">[mailinglist_unsubscribe]</label></div>
                             </div>
                         </form>
                         <div id="mailinglist-response" class="mailinglist-response">
-                            <div class="mailinglist-error hidden"><span class="icon-attention"></span> <strong>Ooop!</strong> The email you entered isn't valid.</div>
-                            <div class="mailinglist-subscribed hidden"><span class="icon-ok"></span> <strong>WooHoo!</strong> You subscribed successfully.</div>
-                            <div class="mailinglist-unsubscribed hidden"><span class="icon-ok"></span> <strong>Ok!</strong> You're unsubscribed.</div>
+                            <div class="mailinglist-error hidden"><span class="icon-attention"></span>[mailinglist_email-error]</div>
+                            <div class="mailinglist-subscribed hidden"><span class="icon-ok"></span>[mailinglist_subscribe-success]</div>
+                            <div class="mailinglist-unsubscribed hidden"><span class="icon-ok"></span>[mailinglist_unsubscribe-success]</div>
                         </div>
                     </div>
                     <!--END: FRAME_MAILLIST-->
@@ -247,7 +247,7 @@
 							<div>
 								<!--START: social_icons-->
 								<ul class="social-icons list-unstyled list-inline">
-
+									<li class="social-icons-label hidden-md hidden-sm hidden-xs">[frame_social-icons-heading]</li>
 									<!--START: social_link_facebook-->
 									<li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook"><span class="icon-facebook"></span></a></li>
 									<!--END: social_link_facebook-->
