@@ -82,7 +82,7 @@
     <header class="site-header navbar-wrapper">
         <div class="container">
             <div class="row" style=" position: relative;">
-            	<div class="col-xs-2 logo-block">
+            	<div class="col-xs-7 logo-block">
                     <div class="logo">
                         <!--START: global_header-->
                         <h3 class="store-name">[storename]</h3>
@@ -91,15 +91,15 @@
                     </div>
                 </div>
                 
-                <div class="col-xs-3 visible-xs text-left head-mobile-nav">
+                <div class="col-xs-5 text-right visible-xs head-mobile-nav">
                     <a href="#" id="mobile-menu-trigger">
                         <span class="icon-menu"></span>
                     </a>
-                </div>
-				
-                <div class="col-xs-3 text-right visible-xs head-mobile-nav">
                     <a href="/view_cart.asp">
                         <span class="icon-basket"></span>
+                    </a>
+                    <a href="#" data-toggle="modal" data-target="#searchModal">
+                        <span class="icon-search"></span>
                     </a>
                 </div>
 
@@ -286,6 +286,30 @@
         </div>
     </footer>
     
+    </div>
+
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="searchLabel">Store Search</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="msearchBox" class="searchBox">
+                        <form method="get" name="MsearchForm" action="search.asp">
+                            <div class="search-form">
+                                <input type="text" name="keyword" value="" placeholder="Search" class="search-text form-control">
+                                <button type="submit" class="search-submit btn btn-default btn-inverse"><span class="icon-search"></span></button>
+                            </div>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <nav id="mobile-menu" class="mobile-menu">
