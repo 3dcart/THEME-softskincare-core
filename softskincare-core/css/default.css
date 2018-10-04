@@ -597,7 +597,7 @@ span.freeshipping {
     text-align: center;
 }
 .product-item .img {
-    min-height: 160px;
+    min-height: 250px;
     position: relative;
     background-color: #fff;
 }
@@ -871,17 +871,6 @@ span.freeshipping {
     }
     .search-form-col {
         clear: both;
-    }
-    .head-mobile-nav,
-    .head-mobile-nav {
-        margin: 20px 0 0;
-        padding: 0px;
-    }
-    .logo-block {
-        width: 58.33333333%;
-    }
-    header.site-header {
-        padding-bottom: 15px;
     }
     .flex-direction-nav a:before {
         font-size: 24px;
@@ -1480,12 +1469,5 @@ input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
 @media(min-width: 768px) {
     .revealOnScroll {
         opacity:0;
-    }
-}
-@media(min-width: 768px) and (max-width: 991px) {
-    div#navbar {
-        max-height: 300px;
-        overflow-x: hidden !important;
-        overflow-y: scroll !important;
     }
 }
