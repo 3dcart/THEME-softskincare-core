@@ -535,9 +535,9 @@ ul.social-icons li.social-icons-label {
 	text-align:center;
 }
 @media(min-width:1025px){
-.product-items .product-item {
+/*.product-items .product-item {
 	opacity: 0;
-}
+}*/
 }
 	.product-items .product-item.animted {
 		opacity: 1;
