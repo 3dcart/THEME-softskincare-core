@@ -1282,7 +1282,9 @@ input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
 		font-size: 22px;
 	}
 	.search-form-col {
-		display: none !important;
+		display: block !important;
+    width: 100%;
+    margin-bottom: 17px;
 	}
 	.head-mobile-nav,
 	.head-mobile-nav {
