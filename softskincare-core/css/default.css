@@ -4,7 +4,21 @@
 html, body {
   height: 100%;
 }
-
+#skip a
+{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+#skip a:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
 body, .static-margin {
   display: flex;
   height: 100%;
@@ -123,7 +137,7 @@ h1 {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
+.product-item .on-sale-badge{background-color: #9E293E;}
 .btn {
     font-size: 14px;
     padding: 10px 12px;
@@ -133,7 +147,7 @@ h1 {
 .btn-default {
     border-color: transparent;
     background-color: #90bef8;
-    color: #fff;
+    color: #222;
     font-weight: 400;
     text-transform: uppercase;
     border-radius: 3px;
@@ -281,7 +295,7 @@ h1 {
     padding: 0;
 }
 .top-nav ul li a {
-    color: #fff;
+    color: #222;
     font-size: 15px;
     text-transform: capitalize;
     padding: 0 15px;
@@ -340,7 +354,7 @@ h1 {
 }
 .minicart a{
 	font-size:15px;
-	color: #fff;
+	color: #222;
 	text-transform: capitalize;
 	font-weight: 300;
 }
@@ -366,7 +380,7 @@ h1 {
 	list-style:none;
 }
 .useraccount ul li a{
-	color: #fff;
+	color: #222;
 	font-size: 14px;
 }
 .site-footer {
@@ -441,7 +455,7 @@ ul.extrapages li a {
     padding-top: 25px;
     padding-bottom: 15px;
     text-align: center;
-    color: #fff;
+    color: #333;
     font-size: 14px;
     font-weight: 500;
     background: #c5c5c5;
@@ -450,7 +464,7 @@ ul.extrapages li a {
 	margin-top: 70px;
 }
 .copyright a{
-	color:#fff;
+	color:#333;
 }
 .mail-social {
 	float: right;
@@ -686,7 +700,7 @@ span.freeshipping {
     margin: 0;
     font-size: 24px;
 }
-.products-section h2 {
+.products-section h2,.products-section h1 {
     font-size: 30px;
     line-height: 70px;
     text-transform: capitalize;

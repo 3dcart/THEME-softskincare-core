@@ -4,7 +4,21 @@
 html, body {
   height: 100%;
 }
-
+#skip a
+{
+position:absolute;
+left:-10000px;
+top:auto;
+width:1px;
+height:1px;
+overflow:hidden;
+}
+#skip a:focus
+{
+position:static;
+width:auto;
+height:auto;
+}
 body, .static-margin {
   display: flex;
   height: 100%;
@@ -124,7 +138,7 @@ h1 {
     -webkit-box-shadow: none;
     box-shadow: none;
 }
-
+.product-item .on-sale-badge{background-color: #9E293E;}
 .btn {
     font-size: 14px;
     padding: 10px 12px;
@@ -696,7 +710,7 @@ span.freeshipping {
     margin: 0;
     font-size: 24px;
 }
-.products-section h2 {
+.products-section h2,.products-section h1 {
     font-size: 30px;
     line-height: 70px;
     text-transform: capitalize;
