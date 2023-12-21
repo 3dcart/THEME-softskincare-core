@@ -7,23 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=yes">
     [META]
 
-    <!--START: FRAME_RSSFEEDS -->
+    <!--START: FRAME_RSSFEEDS-->
     <link rel="alternate" type="application/rss+xml" title="Featured Items (RSS 2.0)" href="[store_url]/rss.asp?type=home" />
     <link rel="alternate" type="application/rss+xml" title="Products On Sale (RSS 2.0)" href="[store_url]/rss.asp?type=onsale" />
     <link rel="alternate" type="application/rss+xml" title="New Releases (RSS 2.0)" href="[store_url]/rss.asp?type=newreleases" />
     <link rel="alternate" type="application/rss+xml" title="Best Sellers (RSS 2.0)" href="[store_url]/rss.asp?type=bestsellers" />
     <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="[store_url]/rss.asp?type=blog" />
-    <!--END: FRAME_RSSFEEDS -->
+    <!--END: FRAME_RSSFEEDS-->
 	
-    <!--START: page_styles-->
-	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
-    <link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+	<!--START: page_styles-->
+	<link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+    <link rel="preload stylesheet" href="assets/templates/common-core/css/core.css" type="text/css" as="style" />
     [page_styles]
-    <link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
-    <!--END: page_styles-->
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/[template]/css/[stylesheet]"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/[template]/css/[stylesheet]"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+	<!--END: page_styles-->
 </head>
 <body class="[body_class]" data-currency="[currency_symbol]" data-decimal="[decimal_places]">
-<div id="skip"><a href="#page-content">Skip to Main Content</a></div>
+    <div id="skip">
+        <a href="#site-header">Skip to Header</a>
+        <a href="#page-content">Skip to Main Content</a>
+        <a href="#site-footer">Skip to Footer</a>
+    </div>
     <section class="top-nav hidden-xs">
         <div class="container">
             <div class="row">
@@ -79,7 +107,7 @@
     
     <div class="sticky-header" id="sticky-header">
 
-    <header class="site-header navbar-wrapper">
+    <header class="site-header navbar-wrapper" id="site-header">
         <div class="container">
             <div class="row" style=" position: relative;">
             	<div class="col-xs-2 logo-block">
@@ -169,7 +197,7 @@
 		<div id="full-width-slider-inner" style="display:none;"></div>
 	</div>
     <!--Get current page template-->
-    <main id="page-content">[page_content]</main>
+    <main id="page-content" class="antiCls">[page_content]</main>
     <!--/Get current page template-->
 
 
@@ -178,43 +206,25 @@
     <!--END: global_footer-->
     <!-- FOOTER -->
     <!--<div class="footer-border"></div>-->
-    <footer class="site-footer">
+    <footer class="site-footer" id="site-footer">
        	
         <div class="container">
 
             <div class="row">
                 <div class="col-md-8 col-sm-12">
-                    <div class="footer-widget col-md-4 col-sm-4">
-						<div class="footer-widget-heading">Company<span class="open-ul"></span></div>
-						<ul id="company">
-							<li><a href="" role="button">About Us</a></li>
-							<li><a href="" role="button">Store Locations</a></li>
-							<li><a href="" role="button">Careers</a></li>
-							<li><a href="" role="button">News</a></li>
-						</ul>
-					</div>
-                   <div class="footer-widget col-md-4 col-sm-4">
-                   		<div class="footer-widget-heading">Customer Support<span class="open-ul"></span></div>
+                   <div class="footer-widget">
+                   		<div class="footer-widget-heading">Pages<span class="open-ul"></span></div>
 						
 						<!--START: FRAME_LINKS-->
 					   <ul id="extrapages">
-							<!--START: LINKS-->
-							<!--START: LINK_FORMAT-->
-							<li><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
-							<!--END: LINK_FORMAT-->
-							<!--END: LINKS-->
-						   </ul>
-							<!--END: FRAME_LINKS-->
+                        <!--START: LINKS-->
+                        <!--START: LINK_FORMAT-->
+                        <li class="col-md-4"><a href="infopage.asp?page=[link_id]&extra=1" target="[link_target]" class="menu-bottom">[link_name]</a></li>
+                        <!--END: LINK_FORMAT-->
+                        <!--END: LINKS-->
+                       </ul>
+                        <!--END: FRAME_LINKS-->
 						
-					</div>
-					<div class="footer-widget col-md-4 col-sm-4">
-						<div class="footer-widget-heading">My Account<span class="open-ul"></span></div>
-						<ul id="your-account">
-							<li><a href="#">About Us</a></li>
-							<li><a href="">Store Locations</a></li>
-							<li><a href="">Careers</a></li>
-							<li><a href="">News</a></li>
-						</ul>
 					</div>
                 </div>
                 <div class="col-md-3 col-sm-12 mail-social">
@@ -308,25 +318,60 @@
     [quickview_modal]
     <!--END: quickview_modal-->
     
-	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
-	<link rel="StyleSheet" href="assets/templates/[template]/fontello/css/fontello.css" type="text/css" />
-    <link rel="StyleSheet" href="assets/templates/common-core/lib/animate-me/animate.css" type="text/css" />
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/[template]/fontello/css/fontello.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/[template]/fontello/css/fontello.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/lib/animate-me/animate.css"
+        as="style"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/lib/animate-me/animate.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript>
 
 	<!--START: page_scripts-->
-	<script src='assets/templates/common-core/lib/jquery.min.js'></script>
-	<script src='assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js'></script>
-	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
-	<script src="assets/templates/common-core/js/core.js"></script>
-	<script src="assets/templates/[template]/js/main.js"></script>
-	<script src="assets/templates/common-core/lib/waypoints/jquery.waypoints.min.js"></script>
+	<script src="assets/templates/common-core/lib/jquery.min.js"></script>
+    <script src="assets/templates/common-core/lib/jquery-migrate-3.0.1.min.js" defer="defer"></script>
+    <script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js" defer="defer"></script>
+    <script src="assets/templates/common-core/js/core.js" defer="defer"></script>
+    <script src="assets/templates/[template]/js/main.js" defer="defer"></script>
+	<script src="assets/templates/common-core/lib/waypoints/jquery.waypoints.min.js" defer="defer"></script>
 	[page_scripts]
 	<!--END: page_scripts-->
 
     <!--START: quicksearch-->
-    <link rel="stylesheet" href="assets/templates/common-core/quicksearch/quicksearch.css" type="text/css" media="screen" />
-    <script type="text/javascript" src="assets/templates/common-core/quicksearch/jquery.quicksearch.js"></script>
+    <link
+        rel="preload stylesheet"
+        href="assets/templates/common-core/quicksearch/quicksearch.css"
+        as="style"
+        media="screen"
+        onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+        <link
+            href="assets/templates/common-core/quicksearch/quicksearch.css"
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+        />
+    </noscript>
+    <script defer type="text/javascript" src="assets/templates/common-core/quicksearch/jquery.quicksearch.js"></script>
     <script type="text/javascript">
         jQuery(function () {
             jQuery('#searchlight').searchlight('/search_quick.asp');
@@ -334,36 +379,40 @@
     </script>
     <!--END: quicksearch-->
 
-<!--START: 3dcart stats-->
-<div class="stats hidden"> 
-    <script type="text/javascript">
-        //<![CDATA[
-        var file='/stats/count.asp';
-        var stats_d=new Date();
-        var stats_s=stats_d.getSeconds();
-        var stats_m=stats_d.getMinutes();
-        var stats_x=stats_s*stats_m;
-        var prdID = '[catalogid]';
-        var catID = '[catid]';
-        stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
-        if (navigator.appName=='Netscape'){stats_b='NS';}
-        if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';}
-        if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
-        stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height;
-        stats_v=navigator.appName;
-        stats_fs = window.screen.fontSmoothingEnabled;
-        if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
-        else {stats_c=screen.pixelDepth;}
-        stats_j=navigator.javaEnabled();
-        info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
-        document.write('<img src="' + file + '?'+info+ '" width="1" height="1" border="0" alt="stats" />');
-        //]]>
-    </script>
-    <noscript>
-        <img src="/stats/count.asp" width="90" height="30" alt="" />
-    </noscript>
-</div>
-<!--END: 3dcart stats-->
+    <!--START: 3dcart stats-->
+    <div id="3dStats" class="stats hidden"> 
+        <script async language="JavaScript" type="text/javascript">
+            var file='/stats/count.asp';
+            var stats_d=new Date(); 
+            var stats_s=stats_d.getSeconds(); 
+            var stats_m=stats_d.getMinutes();
+            var stats_x=stats_s*stats_m;
+            var prdID = '[catalogid]';
+            var catID = '[catid]';
+            var stImg = document.createElement('img');
+                stImg.Class
+                stImg.width = '1';
+                stImg.height = '1';
+                stImg.alt = "3dcart stats";
+
+            stats_f='' + escape(document.referrer); stats_f=stats_f.replace('_','----');
+            if (navigator.appName=='Netscape'){stats_b='NS';} 
+            if (navigator.appName=='Microsoft Internet Explorer'){stats_b='MSIE';} 
+            if (navigator.appVersion.indexOf('MSIE 3')>0) {stats_b='MSIE';}
+            stats_u='' + escape(document.URL); stats_u=stats_u.replace('_','----'); stats_w=screen.width; stats_h=screen.height; 
+            stats_v=navigator.appName; 
+            stats_fs = window.screen.fontSmoothingEnabled;
+            if (stats_v != 'Netscape') {stats_c=screen.colorDepth;}
+            else {stats_c=screen.pixelDepth;}
+            stats_j=navigator.javaEnabled();
+            info='w=' + stats_w + '&h=' + stats_h + '&c=' + stats_c + '&r=' + stats_f + '&u='+ stats_u + '&fs=' + stats_fs + '&b=' + stats_b + '&x=' + stats_x + '&cat=' + catID + '&prd=' + prdID;
+
+            stImg.src =file + '?' + info; 
+            document.getElementById('3dStats').appendChild(stImg);
+        </script>
+        <noscript><img src="/stats/count.asp" width="90" height="30" alt="3dcart stats" /> </noscript>
+    </div>
+    <!--END: 3dcart stats-->
     
 </body>
 </html>
